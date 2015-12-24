@@ -1,0 +1,57 @@
+apply plugin: 'com.android.library'
+
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+
+ext {
+    // See: http://brianattwell.com/distributing-android-libs-via-jcenter/
+
+    bintrayRepo = 'maven'
+    bintrayName = 'LabelledSpinner'
+
+    // Maven metadata
+    publishedGroupId = 'com.farbod.labelledspinner' // to avoid confusion, same name as project dir
+    libraryName = 'LabelledSpinner'
+    artifact = 'labelledspinner' // same name as library module
+
+    libraryDescription = 'A Spinner component with a floating label for Android (similar to EditText components wrapped in a TextInputLayout).'
+    libraryVersion = '0.9.1'
+
+    developerId = "farbodsalamat-zadeh"
+    developerName = "Farbod Salamat-Zadeh"
+    developerEmail = ""
+
+    // Library will be used in the following format:
+    // compile '(publishedGroupId):(artifact):(libraryVersion)'
+}
+
+
+apply from: 'https://raw.githubusercontent.com/attwellBrian/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/attwellBrian/JCenter/master/bintrayv1.gradle'
+
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.1.1'
+}

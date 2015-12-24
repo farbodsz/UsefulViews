@@ -1,0 +1,11 @@
+/labelledspinner/src/androidTest
+/labelledspinner/src/test
+*.iml
+/.idea
+.gradle
+/.navigation
+/gradlew.bat
+/gradlew
+/labelledspinner/build
+/local.properties
+/build
