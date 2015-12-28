@@ -18,6 +18,11 @@ package com.farbod.labelledspinner;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.support.annotation.ArrayRes;
+import android.support.annotation.ColorRes;
+import android.support.annotation.LayoutRes;
+import android.support.annotation.StringRes;
+import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,7 +40,7 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
 
     /**
      * The label positioned above the Spinner, similar to the floating
-     * label from a 'android.support.design.widget.TextInputLayout'.
+     * label from a {@code android.support.design.widget.TextInputLayout}.
      */
     private TextView mLabel;
 
@@ -81,7 +86,7 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
                 0);
         String labelText = typedArray.getString(R.styleable.LabelledSpinner_labelText);
         mWidgetColor = typedArray.getColor(R.styleable.LabelledSpinner_widgetColor,
-                getResources().getColor(R.color.widget_labelled_spinner_default));
+                ContextCompat.getColor(context, R.color.widget_labelled_spinner_default));
         typedArray.recycle();
 
         LayoutInflater inflater =
@@ -146,7 +151,7 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
      *                    the string value which is to be displayed on
      *                    the label.
      */
-    public void setLabelText(int labelTextId) {
+    public void setLabelText(@StringRes int labelTextId) {
         mLabel.setText(getResources().getString(labelTextId));
     }
 
@@ -161,9 +166,9 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
      * @param colorRes The color resource identifier which refers to the
      *                 color that is to be displayed on the widget.
      */
-    public void setColor(int colorRes) {
-        mLabel.setTextColor(getResources().getColor(colorRes));
-        mDivider.setBackgroundColor(getResources().getColor(colorRes));
+    public void setColor(@ColorRes int colorRes) {
+        mLabel.setTextColor(ContextCompat.getColor(getContext(), colorRes));
+        mDivider.setBackgroundColor(ContextCompat.getColor(getContext(), colorRes));
     }
 
     public int getColor() {
@@ -177,9 +182,9 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
      * @see #setItemsArray(int, int, int)
      *
      * @param arrayResId The identifier of the array to use as the data
-     *                   source (e.g. R.array.myArray)
+     *                   source (e.g. {@code R.array.myArray})
      */
-    public void setItemsArray(int arrayResId) {
+    public void setItemsArray(@ArrayRes int arrayResId) {
         setItemsArray(
                 arrayResId,
                 android.R.layout.simple_spinner_item,
@@ -212,13 +217,14 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
      * @see #setItemsArray(ArrayList)
      *
      * @param arrayResId The identifier of the array to use as the data
-     *                   source (e.g. R.array.myArray)
+     *                   source (e.g. {@code R.array.myArray})
      * @param spinnerItemRes The identifier of the layout used to create
-     *                       views (e.g. R.layout.my_item)
+     *                       views (e.g. {@code R.layout.my_item})
      * @param dropdownViewRes The layout resource to create the drop down
-     *                        views (e.g. R.layout.my_dropdown)
+     *                        views (e.g. {@code R.layout.my_dropdown})
      */
-    private void setItemsArray(int arrayResId, int spinnerItemRes, int dropdownViewRes) {
+    private void setItemsArray(@ArrayRes int arrayResId, @LayoutRes int spinnerItemRes,
+                               @LayoutRes int dropdownViewRes) {
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 getContext(),
                 arrayResId,
@@ -279,7 +285,8 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
          * @param position The position of the view in the adapter.
          * @param id The row id of the item that is selected.
          */
-        void onItemChosen(View labelledSpinner, AdapterView<?> adapterView, View itemView, int position, long id);
+        void onItemChosen(View labelledSpinner, AdapterView<?> adapterView, View itemView,
+                          int position, long id);
 
         /**
          * Callback method to be invoked when the selection disappears from this
@@ -341,11 +348,11 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
      *
      * Note: By default, however, a 4dp margin will be added so that the label
      * and divider align correctly with other UI components, such as the label
-     * in a 'android.support.design.widget.TextInputLayout'. This means
-     * that if 'indentLabel' is true, an 8dp left margin will be added
+     * in a {@code android.support.design.widget.TextInputLayout}. This means
+     * that if {@code indentLabel} is true, an 8dp left margin will be added
      * (this would be the 4dp margin to align with other UI components with
      * an additional 4dp margin to align the label with the Spinner item text.
-     * Also note that if 'indentLabel' is true, the label and divider
+     * Also note that if {@code indentLabel} is true, the label and divider
      * will not be aligned with other UI components as they would be 4dp
      * further right from them.
      *
