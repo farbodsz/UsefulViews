@@ -48,8 +48,9 @@ ext {
     libraryName = 'LabelledSpinner'
     artifact = 'labelledspinner' // same name as library module
 
-    libraryDescription = 'A Spinner component with a floating label for Android (similar to EditText components wrapped in a TextInputLayout).'
-    libraryVersion = '0.9.1'
+    libraryDescription = 'A Spinner component with a floating label for Android' +
+            ' (similar to EditText components wrapped in a TextInputLayout).'
+    libraryVersion = '1.1.0'
 
     developerId = "farbodsalamat-zadeh"
     developerName = "Farbod Salamat-Zadeh"
@@ -66,4 +67,5 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.android.support:support-annotations:23.1.1@jar'
 }
