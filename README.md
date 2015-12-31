@@ -13,6 +13,54 @@ dependencies {
 }
 ```
 
+## Usage
+
+Below is a basic example of how `LabelledSpinner` can be used. There will be a full example app showcasing more of its features Soon(TM)...
+
+XML layout file:
+```xml
+xmlns:ls="http://schemas.android.com/apk/res-auto"
+
+...
+
+<com.farbod.labelledspinner.LabelledSpinner
+        android:id="@+id/your_labelled_spinner"
+        ls:labelText="@string/your_spinner_label"
+        ls:widgetColor="#F44336"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+```
+
+And then in Java code...
+
+```java
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.example_usage);
+    ...
+    LabelledSpinner yourSpinner = (LabelledSpinner) findViewById(R.id.your_labelled_spinner);
+    yourSpinner.setItemsArray(R.array.your_array);
+    yourSpinner.setOnItemChosenListener(this);
+}
+
+@Override
+public void onItemChosen(View labelledSpinner, AdapterView<?> adapterView, View itemView, int position, long id) {
+    String selectedText = adapterView.getItemAtPosition(position).toString();
+    switch (labelledSpinner.getId()) {
+        case R.id.your_labelled_spinner:
+            // Do something here
+            break;
+        // If you have multiple LabelledSpinners, you can add more cases here
+    }
+}
+
+@Override
+public void onNothingChosen(View labelledSpinner, AdapterView<?> adapterView) {
+    // Do something here
+}
+```
+
 ## Copyright
 
     Copyright 2015 Farbod Salamat-Zadeh
