@@ -63,7 +63,7 @@ public void onNothingChosen(View labelledSpinner, AdapterView<?> adapterView) {
 
 ## Copyright
 
-    Copyright 2015 Farbod Salamat-Zadeh
+    Copyright 2015-2016 Farbod Salamat-Zadeh
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
