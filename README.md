@@ -15,7 +15,7 @@ dependencies {
 
 ## Usage
 
-Below is a basic example of how `LabelledSpinner` can be used. There will be a full example app showcasing more of its features Soon(TM)...
+Below is a basic example of how `LabelledSpinner` can be used. There is also a sample app [you can view on this repository](https://github.com/FarbodSalamat-Zadeh/LabelledSpinner/tree/master/sample), showcasing `LabelledSpinner`'s features in more detail.
 
 XML layout file:
 ```xml
