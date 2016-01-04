@@ -35,6 +35,7 @@ import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemSelectedListener {
 
@@ -178,7 +179,7 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
     /**
      * Sets the array of items to be used in the Spinner.
      *
-     * @see #setItemsArray(ArrayList)
+     * @see #setItemsArray(List)
      * @see #setItemsArray(int, int, int)
      *
      * @param arrayResId The identifier of the array to use as the data
@@ -198,13 +199,13 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
      * @see #setItemsArray(int)
      * @see #setItemsArray(int, int, int)
      *
-     * @param arrayList The ArrayList used as the data source
+     * @param list The List used as the data source
      */
-    public void setItemsArray(ArrayList<?> arrayList) {
+    public void setItemsArray(List<?> list) {
         ArrayAdapter<?> adapter = new ArrayAdapter<>(
                 getContext(),
                 android.R.layout.simple_spinner_item,
-                arrayList);
+                list);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mSpinner.setAdapter(adapter);
     }
@@ -214,7 +215,7 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
      * Spinner.
      *
      * @see #setItemsArray(int)
-     * @see #setItemsArray(ArrayList)
+     * @see #setItemsArray(List)
      *
      * @param arrayResId The identifier of the array to use as the data
      *                   source (e.g. {@code R.array.myArray})
