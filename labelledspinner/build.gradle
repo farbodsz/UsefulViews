@@ -50,7 +50,7 @@ ext {
 
     libraryDescription = 'A Spinner component with a floating label for Android' +
             ' (similar to EditText components wrapped in a TextInputLayout).'
-    libraryVersion = '1.1.0'
+    libraryVersion = '1.1.2'
 
     developerId = "farbodsalamat-zadeh"
     developerName = "Farbod Salamat-Zadeh"

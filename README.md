@@ -9,7 +9,7 @@ To do so, add the following to your app module's `build.gradle` file:
 ```
 dependencies {
     ...
-    compile 'com.farbod.labelledspinner:labelledspinner:1.1.0'
+    compile 'com.farbod.labelledspinner:labelledspinner:1.1.2'
 }
 ```
 
