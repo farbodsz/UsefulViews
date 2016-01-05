@@ -20,6 +20,8 @@
     <declare-styleable name="LabelledSpinner" >
         <attr name="labelText" format="string" />
         <attr name="widgetColor" format="color" />
+        
+        <attr name="entries" format="reference" />
     </declare-styleable>
 
 </resources>
