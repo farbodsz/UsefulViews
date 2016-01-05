@@ -16,8 +16,10 @@
 
 package com.farbod.labelledspinner;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.os.Build;
 import android.support.annotation.ArrayRes;
 import android.support.annotation.ColorRes;
 import android.support.annotation.LayoutRes;
@@ -34,7 +36,7 @@ import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemSelectedListener {
@@ -75,21 +77,56 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
     }
 
     public LabelledSpinner(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        initializeViews(context, attrs);
+        this(context, attrs, 0);
     }
 
-    private void initializeViews(Context context, AttributeSet attrs) {
-        TypedArray typedArray = context.obtainStyledAttributes(
-                attrs,
-                R.styleable.LabelledSpinner,
-                0,
-                0);
-        String labelText = typedArray.getString(R.styleable.LabelledSpinner_labelText);
-        mWidgetColor = typedArray.getColor(R.styleable.LabelledSpinner_widgetColor,
-                ContextCompat.getColor(context, R.color.widget_labelled_spinner_default));
-        typedArray.recycle();
+    public LabelledSpinner(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        setupLabelledSpinner(context, attrs);
+    }
 
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    public LabelledSpinner(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        super(context, attrs, defStyleAttr, defStyleRes);
+        setupLabelledSpinner(context, attrs);
+    }
+
+    private void setupLabelledSpinner(Context context, AttributeSet attrs) {
+        prepareLayout(context);
+
+        mLabel = (TextView) getChildAt(0);
+        mSpinner = (Spinner) getChildAt(1);
+        mDivider = getChildAt(2);
+
+        final TypedArray a = context.obtainStyledAttributes(
+                attrs, R.styleable.LabelledSpinner, 0, 0);
+
+        String labelText = a.getString(R.styleable.LabelledSpinner_labelText);
+        mWidgetColor = a.getColor(R.styleable.LabelledSpinner_widgetColor,
+                ContextCompat.getColor(context, R.color.widget_labelled_spinner_default));
+
+        mLabel.setText(labelText);
+        mLabel.setTextColor(mWidgetColor);
+        mLabel.setPadding(0, dpToPixels(16), 0, 0);
+        mSpinner.setPadding(0, dpToPixels(8), 0, dpToPixels(8));
+        mSpinner.setOnItemSelectedListener(this);
+
+        MarginLayoutParams dividerParams = (MarginLayoutParams) mDivider.getLayoutParams();
+        dividerParams.rightMargin = dpToPixels(4);
+        dividerParams.bottomMargin = dpToPixels(8);
+        mDivider.setLayoutParams(dividerParams);
+        mDivider.setBackgroundColor(mWidgetColor);
+        alignLabelWithSpinnerItem(4);
+
+        final CharSequence[] entries = a.getTextArray(R.styleable.LabelledSpinner_entries);
+        if (entries != null) {
+            setItemsArray(entries);
+        }
+
+        a.recycle();
+    }
+
+    private void prepareLayout(Context context) {
         LayoutInflater inflater =
                 (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.widget_labelled_spinner, this, true);
@@ -98,24 +135,6 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
         setLayoutParams(new LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT));
-
-        mLabel = (TextView) getChildAt(0);
-        mLabel.setText(labelText);
-        mLabel.setPadding(0, dpToPixels(16), 0, 0);
-        mLabel.setTextColor(mWidgetColor);
-
-        mSpinner = (Spinner) getChildAt(1);
-        mSpinner.setPadding(0, dpToPixels(8), 0, dpToPixels(8));
-        mSpinner.setOnItemSelectedListener(this);
-
-        mDivider = getChildAt(2);
-        MarginLayoutParams dividerParams =
-                (MarginLayoutParams) mDivider.getLayoutParams();
-        dividerParams.rightMargin = dpToPixels(4);
-        dividerParams.bottomMargin = dpToPixels(8);
-        mDivider.setLayoutParams(dividerParams);
-        mDivider.setBackgroundColor(mWidgetColor);
-        alignLabelWithSpinnerItem(4);
     }
 
 
@@ -176,11 +195,13 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
         return mWidgetColor;
     }
 
+
     /**
      * Sets the array of items to be used in the Spinner.
      *
-     * @see #setItemsArray(List)
      * @see #setItemsArray(int, int, int)
+     * @see #setItemsArray(CharSequence[])
+     * @see #setItemsArray(List)
      *
      * @param arrayResId The identifier of the array to use as the data
      *                   source (e.g. {@code R.array.myArray})
@@ -194,27 +215,11 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
     }
 
     /**
-     * Sets the array of items to be used in the Spinner.
-     *
-     * @see #setItemsArray(int)
-     * @see #setItemsArray(int, int, int)
-     *
-     * @param list The List used as the data source
-     */
-    public void setItemsArray(List<?> list) {
-        ArrayAdapter<?> adapter = new ArrayAdapter<>(
-                getContext(),
-                android.R.layout.simple_spinner_item,
-                list);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        mSpinner.setAdapter(adapter);
-    }
-
-    /**
      * A private helper method to set the array of items to be used in the
      * Spinner.
      *
      * @see #setItemsArray(int)
+     * @see #setItemsArray(CharSequence[])
      * @see #setItemsArray(List)
      *
      * @param arrayResId The identifier of the array to use as the data
@@ -233,6 +238,38 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
         adapter.setDropDownViewResource(dropdownViewRes);
         mSpinner.setAdapter(adapter);
     }
+
+    /**
+     * Sets the array of items to be used in the Spinner.
+     *
+     * @see #setItemsArray(int)
+     * @see #setItemsArray(int, int, int)
+     * @see #setItemsArray(List)
+     *
+     * @param itemsArray The array used as the data source
+     */
+    public void setItemsArray(CharSequence[] itemsArray) {
+        setItemsArray(Arrays.asList(itemsArray));
+    }
+
+    /**
+     * Sets the array of items to be used in the Spinner.
+     *
+     * @see #setItemsArray(int)
+     * @see #setItemsArray(int, int, int)
+     * @see #setItemsArray(CharSequence[])
+     *
+     * @param list The List used as the data source
+     */
+    public void setItemsArray(List<?> list) {
+        ArrayAdapter<?> adapter = new ArrayAdapter<>(
+                getContext(),
+                android.R.layout.simple_spinner_item,
+                list);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        mSpinner.setAdapter(adapter);
+    }
+
 
     /**
      * Sets the Adapter used to provide the data for the Spinner.
