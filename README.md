@@ -1,4 +1,7 @@
-# LabelledSpinner
+# LabelledSpinner 
+
+[![Build Status](https://travis-ci.org/FarbodSalamat-Zadeh/LabelledSpinner.svg?branch=master)](https://travis-ci.org/FarbodSalamat-Zadeh/LabelledSpinner)
+
 A Spinner component with a floating label for Android, similar to EditText components wrapped in a TextInputLayout. It answers [this question on Stack Overflow](http://stackoverflow.com/questions/31625620/floating-label-spinner), and [another similar question](http://stackoverflow.com/questions/31001991/how-to-customize-a-spinner-with-floating-text).
 
 ## Gradle (Android Studio)
