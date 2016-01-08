@@ -1,6 +1,5 @@
 # LabelledSpinner 
 
-[![GitHub version](https://badge.fury.io/gh/FarbodSalamat-Zadeh%2FLabelledSpinner.svg)](https://badge.fury.io/gh/FarbodSalamat-Zadeh%2FLabelledSpinner)
 [![Build Status](https://travis-ci.org/FarbodSalamat-Zadeh/LabelledSpinner.svg?branch=master)](https://travis-ci.org/FarbodSalamat-Zadeh/LabelledSpinner)
 
 A Spinner component with a floating label for Android, similar to EditText components wrapped in a TextInputLayout. It answers [this question on Stack Overflow](http://stackoverflow.com/questions/31625620/floating-label-spinner), and [another similar question](http://stackoverflow.com/questions/31001991/how-to-customize-a-spinner-with-floating-text).
@@ -13,7 +12,7 @@ To do so, add the following to your app module's `build.gradle` file:
 ```groovy
 dependencies {
     ...
-    compile 'com.farbod.labelledspinner:labelledspinner:1.1.2'
+    compile 'com.farbod.labelledspinner:labelledspinner:1.1.3'
 }
 ```
 
