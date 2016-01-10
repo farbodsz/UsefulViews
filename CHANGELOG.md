@@ -3,7 +3,10 @@
 [![Releases](https://img.shields.io/badge/LabelledSpinner-releases-blue.svg)](https://github.com/FarbodSalamat-Zadeh/LabelledSpinner/releases)
 [![Tags](https://img.shields.io/badge/LabelledSpinner-tags-FF69B4.svg)](https://github.com/FarbodSalamat-Zadeh/LabelledSpinner/tags)
 
-
+## v1.1.3
+_10th Jan '16_
+- Travis CI integration
+- Change library used to upload to Bintray
 
 ## v1.1.2
 _5th Jan '16_
