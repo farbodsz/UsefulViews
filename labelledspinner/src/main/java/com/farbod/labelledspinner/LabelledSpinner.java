@@ -199,28 +199,16 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
     /**
      * Sets the array of items to be used in the Spinner.
      *
-     * @see #setItemsArray(int, int, int)
-     * @see #setItemsArray(CharSequence[])
-     * @see #setItemsArray(List)
-     *
      * @param arrayResId The identifier of the array to use as the data
      *                   source (e.g. {@code R.array.myArray})
      */
     public void setItemsArray(@ArrayRes int arrayResId) {
-        setItemsArray(
-                arrayResId,
-                android.R.layout.simple_spinner_item,
-                android.R.layout.simple_spinner_dropdown_item
-        );
+        setItemsArray(arrayResId, android.R.layout.simple_spinner_item,
+                android.R.layout.simple_spinner_dropdown_item);
     }
 
     /**
-     * A private helper method to set the array of items to be used in the
-     * Spinner.
-     *
-     * @see #setItemsArray(int)
-     * @see #setItemsArray(CharSequence[])
-     * @see #setItemsArray(List)
+     * Sets the array of items to be used in the Spinner.
      *
      * @param arrayResId The identifier of the array to use as the data
      *                   source (e.g. {@code R.array.myArray})
@@ -229,8 +217,8 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
      * @param dropdownViewRes The layout resource to create the drop down
      *                        views (e.g. {@code R.layout.my_dropdown})
      */
-    private void setItemsArray(@ArrayRes int arrayResId, @LayoutRes int spinnerItemRes,
-                               @LayoutRes int dropdownViewRes) {
+    public void setItemsArray(@ArrayRes int arrayResId, @LayoutRes int spinnerItemRes,
+                              @LayoutRes int dropdownViewRes) {
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 getContext(),
                 arrayResId,
@@ -242,31 +230,49 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
     /**
      * Sets the array of items to be used in the Spinner.
      *
-     * @see #setItemsArray(int)
-     * @see #setItemsArray(int, int, int)
-     * @see #setItemsArray(List)
-     *
      * @param itemsArray The array used as the data source
      */
     public void setItemsArray(CharSequence[] itemsArray) {
-        setItemsArray(Arrays.asList(itemsArray));
+        setItemsArray(itemsArray, android.R.layout.simple_spinner_item,
+                android.R.layout.simple_spinner_dropdown_item);
+    }
+
+    public void setItemsArray(CharSequence[] itemsArray, @LayoutRes int spinnerItemRes,
+                              @LayoutRes int dropdownViewRes) {
+        ArrayAdapter<CharSequence> adapter = new ArrayAdapter<>(
+                getContext(),
+                spinnerItemRes,
+                itemsArray);
+        adapter.setDropDownViewResource(dropdownViewRes);
+        mSpinner.setAdapter(adapter);
     }
 
     /**
      * Sets the array of items to be used in the Spinner.
      *
-     * @see #setItemsArray(int)
-     * @see #setItemsArray(int, int, int)
-     * @see #setItemsArray(CharSequence[])
-     *
      * @param list The List used as the data source
      */
     public void setItemsArray(List<?> list) {
+        setItemsArray(list, android.R.layout.simple_spinner_item,
+                android.R.layout.simple_spinner_dropdown_item);
+    }
+
+    /**
+     * Sets the array of items to be used in the Spinner.
+     *
+     * @param list The list to be used as the data source.
+     * @param spinnerItemRes The identifier of the layout used to create
+     *                       views (e.g. {@code R.layout.my_item})
+     * @param dropdownViewRes The layout resource to create the drop down
+     *                        views (e.g. {@code R.layout.my_dropdown})
+     */
+    public void setItemsArray(List<?> list, @LayoutRes int spinnerItemRes,
+                              @LayoutRes int dropdownViewRes) {
         ArrayAdapter<?> adapter = new ArrayAdapter<>(
                 getContext(),
-                android.R.layout.simple_spinner_item,
+                spinnerItemRes,
                 list);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter.setDropDownViewResource(dropdownViewRes);
         mSpinner.setAdapter(adapter);
     }
 
