@@ -16,12 +16,16 @@
   -->
 
 <resources>
-
+    <!-- These are attributes for the LabelledSpinner component -->
     <declare-styleable name="LabelledSpinner" >
-        <attr name="labelText" format="string" />
-        <attr name="widgetColor" format="color" />
-        
-        <attr name="entries" format="reference" />
-    </declare-styleable>
 
+        <!-- The text that is displayed on the floating label -->
+        <attr name="labelText" format="string" />
+        <!-- Specifies the color of the label and the bottom line -->
+        <attr name="widgetColor" format="color" />
+
+        <!-- Sets the array to be displayed on the Spinner -->
+        <attr name="entries" format="reference" />
+
+    </declare-styleable>
 </resources>

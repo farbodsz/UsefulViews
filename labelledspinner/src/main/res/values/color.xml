@@ -17,6 +17,7 @@
 
 <resources>
 
+    <!-- The default color of the widget (label and bottom line). -->
     <color name="widget_labelled_spinner_default">#6D6D6D</color>
 
 </resources>
