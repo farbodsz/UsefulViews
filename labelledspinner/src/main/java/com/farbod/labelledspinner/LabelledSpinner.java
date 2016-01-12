@@ -154,8 +154,6 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
     /**
      * Sets the text the label is to display.
      *
-     * @see #setLabelText(int)
-     *
      * @param labelText The CharSequence value to be displayed on the label.
      */
     public void setLabelText(CharSequence labelText) {
@@ -164,8 +162,6 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
 
     /**
      * Sets the text the label is to display.
-     *
-     * @see #setLabelText(CharSequence)
      *
      * @param labelTextId The string resource identifier which refers to
      *                    the string value which is to be displayed on
@@ -397,8 +393,6 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
      * it aligns with the Spinner item text. By default, the additional 4dp
      * margin will not be added.
      *
-     * @see #alignLabelWithSpinnerItem(int)
-     *
      * Note: By default, however, a 4dp margin will be added so that the label
      * and divider align correctly with other UI components, such as the label
      * in a {@code android.support.design.widget.TextInputLayout}. This means
@@ -410,6 +404,8 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
      * further right from them.
      *
      * @param indentLabel Whether or not the label will be indented
+     *
+     * @see #alignLabelWithSpinnerItem(int)
      */
     public void alignLabelWithSpinnerItem(boolean indentLabel) {
         if (indentLabel) {
@@ -424,9 +420,9 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
      * divider line underneath, used to align these to the start of the Spinner
      * item text.
      *
-     * @see #alignLabelWithSpinnerItem(boolean)
-     *
      * @param indentDps The density-independent pixel value for the left margin
+     *
+     * @see #alignLabelWithSpinnerItem(boolean)
      */
     private void alignLabelWithSpinnerItem(int indentDps) {
         MarginLayoutParams labelParams =
