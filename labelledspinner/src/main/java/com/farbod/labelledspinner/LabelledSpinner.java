@@ -39,6 +39,22 @@ import android.widget.TextView;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * A Spinner widget with a 'floating label' above it.
+ *
+ * This is actually a compound view consisting of a
+ * {@link android.widget.Spinner}, a {@link android.widget.TextView}
+ * (the floating label), and another {@link android.view.View} (a 1dp thin
+ * line underneath the Spinner). The result is a Spinner widget looking
+ * similar to a {@code android.support.design.widget.TextInputLayout}
+ * and complying with the
+ * <a href="www.google.com/design/spec/components/text-fields.html#text-fields-labels">
+ * Material Design Guidelines for labels on text fields and spinners</a>.
+ *
+ * @attr ref R.styleable#LabelledSpinner_labelText
+ * @attr ref R.styleable#LabelledSpinner_widgetColor
+ * @attr ref R.styleable#LabelledSpinner_entries
+ */
 public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemSelectedListener {
 
     /**
@@ -48,7 +64,7 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
     private TextView mLabel;
 
     /**
-     * The Spinner component used in this layout.
+     * The Spinner widget used in this layout.
      */
     private Spinner mSpinner;
 
@@ -158,7 +174,7 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
      *
      * @see #setLabelText(int)
      * @see #getLabelText()
-     * @attr ref #R.styleable.LabelledSpinner_labelText
+     * @attr ref R.styleable#LabelledSpinner_labelText
      */
     public void setLabelText(CharSequence labelText) {
         mLabel.setText(labelText);
@@ -173,7 +189,7 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
      *
      * @see #setLabelText(CharSequence)
      * @see #getLabelText()
-     * @attr ref #R.styleable.LabelledSpinner_labelText
+     * @attr ref R.styleable#LabelledSpinner_labelText
      */
     public void setLabelText(@StringRes int labelTextId) {
         mLabel.setText(getResources().getString(labelTextId));
@@ -191,7 +207,7 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
      *                 color that is to be displayed on the widget.
      *
      * @see #getColor()
-     * @attr ref #R.styleable.LabelledSpinner_widgetColor
+     * @attr ref R.styleable#LabelledSpinner_widgetColor
      */
     public void setColor(@ColorRes int colorRes) {
         mLabel.setTextColor(ContextCompat.getColor(getContext(), colorRes));
@@ -215,7 +231,7 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
      * @see #setItemsArray(List)
      * @see #setItemsArray(List, int, int)
      *
-     * @attr ref #R.styleable.LabelledSpinner_entries
+     * @attr ref R.styleable#LabelledSpinner_entries
      */
     public void setItemsArray(@ArrayRes int arrayResId) {
         setItemsArray(arrayResId, android.R.layout.simple_spinner_item,
@@ -238,7 +254,7 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
      * @see #setItemsArray(List)
      * @see #setItemsArray(List, int, int)
      *
-     * @attr ref #R.styleable.LabelledSpinner_entries
+     * @attr ref R.styleable#LabelledSpinner_entries
      */
     public void setItemsArray(@ArrayRes int arrayResId, @LayoutRes int spinnerItemRes,
                               @LayoutRes int dropdownViewRes) {
@@ -261,7 +277,7 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
      * @see #setItemsArray(List)
      * @see #setItemsArray(List, int, int)
      *
-     * @attr ref #R.styleable.LabelledSpinner_entries
+     * @attr ref R.styleable#LabelledSpinner_entries
      */
     public void setItemsArray(CharSequence[] itemsArray) {
         setItemsArray(itemsArray, android.R.layout.simple_spinner_item,
@@ -283,7 +299,7 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
      * @see #setItemsArray(List)
      * @see #setItemsArray(List, int, int)
      *
-     * @attr ref #R.styleable.LabelledSpinner_entries
+     * @attr ref R.styleable#LabelledSpinner_entries
      */
     public void setItemsArray(CharSequence[] itemsArray, @LayoutRes int spinnerItemRes,
                               @LayoutRes int dropdownViewRes) {
@@ -306,7 +322,7 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
      * @see #setItemsArray(CharSequence[], int, int)
      * @see #setItemsArray(List, int, int)
      *
-     * @attr ref #R.styleable.LabelledSpinner_entries
+     * @attr ref R.styleable#LabelledSpinner_entries
      */
     public void setItemsArray(List<?> list) {
         setItemsArray(list, android.R.layout.simple_spinner_item,
@@ -328,7 +344,7 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
      * @see #setItemsArray(CharSequence[], int, int)
      * @see #setItemsArray(List)
      *
-     * @attr ref #R.styleable.LabelledSpinner_entries
+     * @attr ref R.styleable#LabelledSpinner_entries
      */
     public void setItemsArray(List<?> list, @LayoutRes int spinnerItemRes,
                               @LayoutRes int dropdownViewRes) {
