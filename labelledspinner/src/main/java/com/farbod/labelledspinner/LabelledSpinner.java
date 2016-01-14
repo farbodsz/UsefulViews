@@ -107,6 +107,9 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
         setupLabelledSpinner(context, attrs);
     }
 
+    /**
+     * Main method called by constructors
+     */
     private void setupLabelledSpinner(Context context, AttributeSet attrs) {
         prepareLayout(context);
 
@@ -142,6 +145,9 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
         a.recycle();
     }
 
+    /**
+     * Inflates the layout and sets layout parameters
+     */
     private void prepareLayout(Context context) {
         LayoutInflater inflater =
                 (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -154,14 +160,26 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
     }
 
 
+    /**
+     * @return the label (a {@link android.widget.TextView}) from this
+     * compound view
+     */
     public TextView getLabel() {
         return mLabel;
     }
 
+    /**
+     * @return the {@link android.widget.Spinner} widget from this compound
+     * view
+     */
     public Spinner getSpinner() {
         return mSpinner;
     }
 
+    /**
+     * @return the divider line {@link android.view.View} underneath the
+     * Spinner
+     */
     public View getDivider() {
         return mDivider;
     }
@@ -195,6 +213,9 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
         mLabel.setText(getResources().getString(labelTextId));
     }
 
+    /**
+     * @return the text shown on the floating label
+     */
     public CharSequence getLabelText() {
         return mLabel.getText();
     }
@@ -210,10 +231,14 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
      * @attr ref R.styleable#LabelledSpinner_widgetColor
      */
     public void setColor(@ColorRes int colorRes) {
+        // FIXME: mWidgetColor is not updated here
         mLabel.setTextColor(ContextCompat.getColor(getContext(), colorRes));
         mDivider.setBackgroundColor(ContextCompat.getColor(getContext(), colorRes));
     }
 
+    /**
+     * @return the color used as the label and divider line
+     */
     public int getColor() {
         return mWidgetColor;
     }
@@ -436,6 +461,9 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
         mOnItemChosenListener = onItemChosenListener;
     }
 
+    /**
+     * @return the interface which handles selection of items in the Spinner
+     */
     public OnItemChosenListener getOnItemChosenListener() {
         return mOnItemChosenListener;
     }
