@@ -36,7 +36,6 @@ import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -97,20 +96,13 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
     }
 
     public LabelledSpinner(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
-        setupLabelledSpinner(context, attrs);
+        this(context, attrs, defStyleAttr, 0);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public LabelledSpinner(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
-        setupLabelledSpinner(context, attrs);
-    }
 
-    /**
-     * Main method called by constructors
-     */
-    private void setupLabelledSpinner(Context context, AttributeSet attrs) {
         prepareLayout(context);
 
         mLabel = (TextView) getChildAt(0);
@@ -144,6 +136,7 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
 
         a.recycle();
     }
+
 
     /**
      * Inflates the layout and sets layout parameters
@@ -231,7 +224,6 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
      * @attr ref R.styleable#LabelledSpinner_widgetColor
      */
     public void setColor(@ColorRes int colorRes) {
-        // FIXME: mWidgetColor is not updated here
         mLabel.setTextColor(ContextCompat.getColor(getContext(), colorRes));
         mDivider.setBackgroundColor(ContextCompat.getColor(getContext(), colorRes));
     }
