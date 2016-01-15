@@ -224,8 +224,9 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
      * @attr ref R.styleable#LabelledSpinner_widgetColor
      */
     public void setColor(@ColorRes int colorRes) {
-        mLabel.setTextColor(ContextCompat.getColor(getContext(), colorRes));
-        mDivider.setBackgroundColor(ContextCompat.getColor(getContext(), colorRes));
+        mWidgetColor = ContextCompat.getColor(getContext(), colorRes);
+        mLabel.setTextColor(mWidgetColor);
+        mDivider.setBackgroundColor(mWidgetColor);
     }
 
     /**
