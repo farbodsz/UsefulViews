@@ -25,7 +25,9 @@ import android.support.annotation.ColorRes;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.StringRes;
 import android.support.v4.content.ContextCompat;
+import android.text.TextUtils;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -74,6 +76,13 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
     private View mDivider;
 
     /**
+     * A label positioned below the Spinner and thin divider line,
+     * which displays error texts. This is similar to a
+     * {@code android.support.design.widget.TextInputLayout}).
+     */
+    private TextView mErrorLabel;
+
+    /**
      * The listener that receives notifications when an item in the
      * AdapterView is selected.
      */
@@ -85,6 +94,10 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
      * again if the color is set programmatically.
      */
     private int mWidgetColor;
+
+    private CharSequence mDefaultErrorText;
+
+    private boolean mDefaultErrorEnabled;
 
 
     public LabelledSpinner(Context context) {
@@ -108,6 +121,7 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
         mLabel = (TextView) getChildAt(0);
         mSpinner = (Spinner) getChildAt(1);
         mDivider = getChildAt(2);
+        mErrorLabel = (TextView) getChildAt(3);
 
         final TypedArray a = context.obtainStyledAttributes(
                 attrs, R.styleable.LabelledSpinner, 0, 0);
@@ -117,7 +131,6 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
                 ContextCompat.getColor(context, R.color.widget_labelled_spinner_default));
 
         mLabel.setText(labelText);
-        mLabel.setTextColor(mWidgetColor);
         mLabel.setPadding(0, dpToPixels(16), 0, 0);
         mSpinner.setPadding(0, dpToPixels(8), 0, dpToPixels(8));
         mSpinner.setOnItemSelectedListener(this);
@@ -126,13 +139,20 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
         dividerParams.rightMargin = dpToPixels(4);
         dividerParams.bottomMargin = dpToPixels(8);
         mDivider.setLayoutParams(dividerParams);
+
+        mLabel.setTextColor(mWidgetColor);
         mDivider.setBackgroundColor(mWidgetColor);
+
         alignLabelWithSpinnerItem(4);
 
         final CharSequence[] entries = a.getTextArray(R.styleable.LabelledSpinner_entries);
         if (entries != null) {
             setItemsArray(entries);
         }
+
+        mDefaultErrorEnabled =
+                a.getBoolean(R.styleable.LabelledSpinner_defaultErrorEnabled, false);
+        mDefaultErrorText = getResources().getString(R.string.widget_labelled_spinner_errorText);
 
         a.recycle();
     }
@@ -175,6 +195,14 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
      */
     public View getDivider() {
         return mDivider;
+    }
+
+    /**
+     * @return the error label (a {@link android.widget.TextView}) from this
+     * compound view, which displays error texts
+     */
+    public TextView getErrorLabel() {
+        return mErrorLabel;
     }
 
 
@@ -234,6 +262,38 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
      */
     public int getColor() {
         return mWidgetColor;
+    }
+
+    /**
+     * Sets the error text that is displayed when the first item of the
+     * Spinner (e.g. a prompt such as 'Select an item...') is selected.
+     *
+     * @param error The error text to be displayed.
+     * @see #getDefaultErrorText()
+     */
+    public void setDefaultErrorText(CharSequence error) {
+        mDefaultErrorText = error;
+    }
+
+    /**
+     * @return the error text that is displayed when the first item of
+     * the Spinner (e.g. a prompt) is selected
+     */
+    public CharSequence getDefaultErrorText() {
+        return mDefaultErrorText;
+    }
+
+    /**
+     * Sets a boolean deciding whether the default error can be
+     * displayed (this is where an error is shown if the first item of
+     * the Spinner, such as a prompt, is selected).
+     *
+     * @param enabled Whether or not the default error is enabled.
+     *
+     * @attr ref R.styleable#LabelledSpinner_defaultErrorEnabled
+     */
+    public void setDefaultErrorEnabled(boolean enabled) {
+        mDefaultErrorEnabled = enabled;
     }
 
 
@@ -467,6 +527,18 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         if (mOnItemChosenListener != null) {
+            if (mDefaultErrorEnabled) {
+                if (position == 0) {
+                    // If the first item is selected (e.g. a prompt), the error is shown
+                    mErrorLabel.setText(mDefaultErrorText);
+                    mDivider.setBackgroundColor(ContextCompat.getColor(
+                            getContext(), R.color.widget_labelled_spinner_error));
+                } else {
+                    mErrorLabel.setText(" ");
+                    mDivider.setBackgroundColor(mWidgetColor);
+                }
+            }
+
             // 'this' refers to this LabelledSpinner component
             mOnItemChosenListener.onItemChosen(this, parent, view, position, id);
         }
@@ -525,6 +597,7 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
                 (MarginLayoutParams) mLabel.getLayoutParams();
         labelParams.leftMargin = dpToPixels(indentDps);
         mLabel.setLayoutParams(labelParams);
+        mErrorLabel.setLayoutParams(labelParams);
 
         MarginLayoutParams dividerParams =
                 (MarginLayoutParams) mDivider.getLayoutParams();

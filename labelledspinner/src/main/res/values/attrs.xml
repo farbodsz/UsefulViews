@@ -27,5 +27,9 @@
         <!-- Sets the array to be displayed on the Spinner -->
         <attr name="entries" format="reference" />
 
+        <!-- Controls whether an error is shown if the first item (which
+        would be a prompt) is selected and has not been changed -->
+        <attr name="defaultErrorEnabled" format="boolean" />
+
     </declare-styleable>
 </resources>
