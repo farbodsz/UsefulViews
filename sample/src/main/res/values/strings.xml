@@ -21,7 +21,7 @@
 
     <string name="planets_prompt">Choose a planet…</string>
     <string-array name="planets_array">
-        <item>Select one…</item>
+        <item>Select one…</item>  <!-- Prompt item -->
         <item>Mercury</item>
         <item>Venus</item>
         <item>Earth</item>
