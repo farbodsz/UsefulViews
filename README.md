@@ -12,7 +12,7 @@ To do so, add the following to your app module's `build.gradle` file:
 ```groovy
 dependencies {
     ...
-    compile 'com.farbod.labelledspinner:labelledspinner:1.1.3'
+    compile 'com.farbod.labelledspinner:labelledspinner:1.1.4'
 }
 ```
 
@@ -49,7 +49,6 @@ protected void onCreate(Bundle savedInstanceState) {
 
 @Override
 public void onItemChosen(View labelledSpinner, AdapterView<?> adapterView, View itemView, int position, long id) {
-    String selectedText = adapterView.getItemAtPosition(position).toString();
     switch (labelledSpinner.getId()) {
         case R.id.your_labelled_spinner:
             // Do something here
