@@ -3,6 +3,10 @@
 [![Releases](https://img.shields.io/badge/LabelledSpinner-releases-blue.svg)](https://github.com/FarbodSalamat-Zadeh/LabelledSpinner/releases)
 [![Tags](https://img.shields.io/badge/LabelledSpinner-tags-FF69B4.svg)](https://github.com/FarbodSalamat-Zadeh/LabelledSpinner/tags)
 
+## 1.1.4
+_17th Jan '16_
+- Add optional error text for when the first item (e.g. a prompt text)of the `LabelledSpinner` is selected
+
 ## v1.1.3
 _10th Jan '16_
 - Travis CI integration
