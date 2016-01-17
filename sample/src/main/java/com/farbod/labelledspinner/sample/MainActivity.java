@@ -37,9 +37,8 @@ public class MainActivity extends AppCompatActivity implements LabelledSpinner.O
 
         LabelledSpinner labelledSpinner = (LabelledSpinner) findViewById(R.id.spinner_planets);
         labelledSpinner.setItemsArray(R.array.planets_array);
-        /* The following do not work prior to v1.1.4 (not released yet)! */
-        //labelledSpinner.setDefaultErrorEnabled(true);
-        //labelledSpinner.setDefaultErrorText("This is a compulsory field.");  // Displayed when first item remains selected
+        labelledSpinner.setDefaultErrorEnabled(true);
+        labelledSpinner.setDefaultErrorText("This is a compulsory field.");  // Displayed when first item remains selected
         labelledSpinner.setOnItemChosenListener(this);
     }
 
