@@ -25,9 +25,7 @@ import android.support.annotation.ColorRes;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.StringRes;
 import android.support.v4.content.ContextCompat;
-import android.text.TextUtils;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -95,8 +93,16 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
      */
     private int mWidgetColor;
 
+    /**
+     * The error text that is displayed for when the first item (e.g.
+     * a prompt) is selected.
+     */
     private CharSequence mDefaultErrorText;
 
+    /**
+     * Whether or not the 'default error' is shown. This is the error
+     * when the first item, such as a prompt, is selected.
+     */
     private boolean mDefaultErrorEnabled;
 
 
@@ -268,8 +274,12 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
      * Sets the error text that is displayed when the first item of the
      * Spinner (e.g. a prompt such as 'Select an item...') is selected.
      *
+     * This will only have an effect if the default error option is
+     * enabled.
+     *
      * @param error The error text to be displayed.
      * @see #getDefaultErrorText()
+     * @see #setDefaultErrorEnabled(boolean)
      */
     public void setDefaultErrorText(CharSequence error) {
         mDefaultErrorText = error;
