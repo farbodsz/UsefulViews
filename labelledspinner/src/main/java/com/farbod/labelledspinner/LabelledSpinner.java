@@ -111,13 +111,12 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
     }
 
     public LabelledSpinner(Context context, AttributeSet attrs) {
-        super(context, attrs, 0);
-        setUpLayout(context, attrs);
+        this(context, attrs, 0);
     }
 
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public LabelledSpinner(Context context, AttributeSet attrs, int defStyleAttr) {
-        this(context, attrs, defStyleAttr, 0);
+        super(context, attrs, defStyleAttr);
+        setUpLayout(context, attrs);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
