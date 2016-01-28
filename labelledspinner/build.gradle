@@ -19,13 +19,13 @@ apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.1"
+    buildToolsVersion "23.0.2"
 
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 23
-        versionCode 114
-        versionName "1.1.4"
+        versionCode 115
+        versionName "1.1.5"
     }
     buildTypes {
         release {
@@ -48,7 +48,7 @@ publish {
     userOrg = 'farbodsalamat-zadeh'
     groupId = 'com.farbod.labelledspinner' // to avoid confusion, same name as project dir'
     artifactId = 'labelledspinner' // same name as library module
-    publishVersion = '1.1.4'
+    publishVersion = '1.1.5'
     desc = 'A Spinner component with a floating label for Android' +
             ' (similar to EditText components wrapped in a TextInputLayout).'
     website = 'https://github.com/FarbodSalamat-Zadeh/LabelledSpinner'
