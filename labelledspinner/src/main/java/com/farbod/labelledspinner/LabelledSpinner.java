@@ -106,6 +106,7 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
      */
     private boolean mDefaultErrorEnabled;
 
+
     public LabelledSpinner(Context context) {
         this(context, null);
     }
@@ -116,16 +117,22 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
 
     public LabelledSpinner(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        setUpLayout(context, attrs);
+        initializeLayout(context, attrs);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public LabelledSpinner(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
-        setUpLayout(context, attrs);
+        initializeLayout(context, attrs);
     }
 
-    private void setUpLayout(Context context, AttributeSet attrs) {
+    /**
+     * Sets up views and widget attributes
+     *
+     * @param context Context passed from constructor
+     * @param attrs AttributeSet passed from constructor
+     */
+    private void initializeLayout(Context context, AttributeSet attrs) {
         prepareLayout(context);
 
         mLabel = (TextView) getChildAt(0);
