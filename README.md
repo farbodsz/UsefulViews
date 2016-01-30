@@ -12,7 +12,7 @@ To do so, add the following to your app module's `build.gradle` file:
 ```groovy
 dependencies {
     ...
-    compile 'com.farbod.labelledspinner:labelledspinner:1.1.4'
+    compile 'com.farbod.labelledspinner:labelledspinner:1.1.5'
 }
 ```
 

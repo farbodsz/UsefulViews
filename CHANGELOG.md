@@ -3,6 +3,11 @@
 [![Releases](https://img.shields.io/badge/LabelledSpinner-releases-blue.svg)](https://github.com/FarbodSalamat-Zadeh/LabelledSpinner/releases)
 [![Tags](https://img.shields.io/badge/LabelledSpinner-tags-FF69B4.svg)](https://github.com/FarbodSalamat-Zadeh/LabelledSpinner/tags)
 
+## 1.1.5
+_30th Jan '16_
+- Include update to Android build tools (23.0.2)
+- Fix `LabelledSpinner` constructor calls (where there were calls to the View constructor for API 21+)
+
 ## 1.1.4
 _17th Jan '16_
 - Add optional error text for when the first item (e.g. a prompt text)of the `LabelledSpinner` is selected
