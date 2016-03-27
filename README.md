@@ -1,8 +1,10 @@
-# LabelledSpinner 
+# UsefulViews
 
 [![Build Status](https://travis-ci.org/FarbodSalamat-Zadeh/LabelledSpinner.svg?branch=master)](https://travis-ci.org/FarbodSalamat-Zadeh/LabelledSpinner)
 
-A Spinner component with a floating label for Android, similar to EditText components wrapped in a TextInputLayout. It answers [this question on Stack Overflow](http://stackoverflow.com/questions/31625620/floating-label-spinner), and [another similar question](http://stackoverflow.com/questions/31001991/how-to-customize-a-spinner-with-floating-text).
+Some useful widgets to use in Android development.
+
+This project initially started from `LabelledSpinner` (a Spinner component with a floating label for Android). For reference you can see [this question on Stack Overflow](http://stackoverflow.com/questions/31625620/floating-label-spinner), and [another similar question](http://stackoverflow.com/questions/31001991/how-to-customize-a-spinner-with-floating-text).
 
 ## Gradle (Android Studio)
 You can add this Android library to your Gradle dependencies.
@@ -12,11 +14,13 @@ To do so, add the following to your app module's `build.gradle` file:
 ```groovy
 dependencies {
     ...
-    compile 'com.farbod.labelledspinner:labelledspinner:1.2.0'
+    compile 'com.satsuware.lib:usefulviews:2.0'
 }
 ```
 
 ## Usage
+
+# LabelledSpinner
 
 Below is a basic example of how `LabelledSpinner` can be used. There is also a sample app [you can view on this repository](https://github.com/FarbodSalamat-Zadeh/LabelledSpinner/tree/master/sample), showcasing `LabelledSpinner`'s features in more detail.
 
@@ -26,7 +30,7 @@ xmlns:ls="http://schemas.android.com/apk/res-auto"
 
 ...
 
-<com.farbod.labelledspinner.LabelledSpinner
+<com.satsuware.usefulviews.LabelledSpinner
         android:id="@+id/your_labelled_spinner"
         ls:labelText="@string/your_spinner_label"
         ls:widgetColor="#F44336"
@@ -62,6 +66,19 @@ public void onNothingChosen(View labelledSpinner, AdapterView<?> adapterView) {
     // Do something here
 }
 ```
+
+## Deprecation
+
+For those using the now outdated library dependency:
+
+```groovy
+dependencies {
+    ...
+    compile 'com.farbod.labelledspinner:labelledspinner:1.2.0'
+}
+```
+
+You can continue to use this, however it is recommended you update to the new one.
 
 ## Changelog
 

@@ -1,7 +1,13 @@
-# Changelog - LabelledSpinner
+# Changelog - UsefulViews
 
 [![Releases](https://img.shields.io/badge/LabelledSpinner-releases-blue.svg)](https://github.com/FarbodSalamat-Zadeh/LabelledSpinner/releases)
 [![Tags](https://img.shields.io/badge/LabelledSpinner-tags-FF69B4.svg)](https://github.com/FarbodSalamat-Zadeh/LabelledSpinner/tags)
+
+## 2.0
+_27th Mar '16_
+- Changes library name from _LabelledSpinner_ to _UsefulViews_
+- Refactoring so that package `com.farbod.labelledspinner` is moved to `com.satsuware.usefulviews` (reasons for this are explained in the commit descriptions)
+- Library descriptions and dependencies updated accordingly
 
 ## 1.2.0
 _17th Mar '16_
@@ -17,22 +23,22 @@ _30th Jan '16_
 _17th Jan '16_
 - Add optional error text for when the first item (e.g. a prompt text)of the `LabelledSpinner` is selected
 
-## v1.1.3
+## 1.1.3
 _10th Jan '16_
 - Travis CI integration
 - Change library used to upload to Bintray
 
-## v1.1.2
+## 1.1.2
 _5th Jan '16_
 - The items displayed can be set using an XML attribute. Also, `setItemsArray` can now have a `CharSequence[]` as the argument.
 - `LabelledSpinner` has new constructors (including one for API 21+)
 - Refactoring of `LabelledSpinner` (including the use of `List` instead of `ArrayList`)
 - Optimised imports
 
-## v1.1
+## 1.1
 _28th Dec '15_
 - Cleared up lots of minor issues.
 
-## Initial release (v1.0)
+## Initial release (1.0)
 _24th Dec '15_
 - Initial release of the library, transferred originally from a number of files on GitHub Gist.
