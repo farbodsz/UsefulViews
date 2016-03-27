@@ -1,9 +1,6 @@
-/labelledspinner/src/androidTest
-/labelledspinner/src/test
 *.iml
 /.idea
-.gradle
-/.navigation
-/labelledspinner/build
-/local.properties
 /build
+/library/build
+/sample/build
+/local.properties
