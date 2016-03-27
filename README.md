@@ -14,13 +14,13 @@ To do so, add the following to your app module's `build.gradle` file:
 ```groovy
 dependencies {
     ...
-    compile 'com.satsuware.lib:usefulviews:2.0'
+    compile 'com.satsuware.lib:usefulviews:2.0.0'
 }
 ```
 
 ## Usage
 
-# LabelledSpinner
+### LabelledSpinner
 
 Below is a basic example of how `LabelledSpinner` can be used. There is also a sample app [you can view on this repository](https://github.com/FarbodSalamat-Zadeh/LabelledSpinner/tree/master/sample), showcasing `LabelledSpinner`'s features in more detail.
 

@@ -46,7 +46,7 @@ publish {
     // Library will be used in the following format:
     // compile '(publishedGroupId):(artifact):(libraryVersion)'
     userOrg = 'farbodsalamat-zadeh'
-    groupId = 'com.satsuware.lib' // to avoid confusion, same name as project dir'
+    groupId = 'com.satsuware.lib'
     artifactId = 'usefulviews'
     publishVersion = '2.0.0'
     desc = 'A collection of useful widgets for Android.'
