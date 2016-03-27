@@ -14,7 +14,7 @@ To do so, add the following to your app module's `build.gradle` file:
 ```groovy
 dependencies {
     ...
-    compile 'com.satsuware.lib:usefulviews:2.0.0'
+    compile 'com.satsuware.lib:usefulviews:2.0.1'
 }
 ```
 
@@ -82,7 +82,7 @@ You can continue to use this, however it is recommended you update to the new on
 
 ## Changelog
 
-A changelog of this repository can be found [here](https://github.com/FarbodSalamat-Zadeh/LabelledSpinner/blob/master/CHANGELOG.md), but see [this page](https://github.com/FarbodSalamat-Zadeh/LabelledSpinner/releases) for a list of releases and tags (also with a changelog).
+A changelog of this repository can be found [here](https://github.com/FarbodSalamat-Zadeh/UsefulViews/blob/master/CHANGELOG.md), but see [this page](https://github.com/FarbodSalamat-Zadeh/UsefulViews/releases) for a list of releases and tags (also with a changelog).
 
 ## Copyright
 

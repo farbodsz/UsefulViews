@@ -3,6 +3,10 @@
 [![Releases](https://img.shields.io/badge/LabelledSpinner-releases-blue.svg)](https://github.com/FarbodSalamat-Zadeh/LabelledSpinner/releases)
 [![Tags](https://img.shields.io/badge/LabelledSpinner-tags-FF69B4.svg)](https://github.com/FarbodSalamat-Zadeh/LabelledSpinner/tags)
 
+## 2.0.1
+_27th Mar '16_
+- Fixes issue regarding Javadoc checks when uploading to Bintray
+
 ## 2.0
 _27th Mar '16_
 - Changes library name from _LabelledSpinner_ to _UsefulViews_
