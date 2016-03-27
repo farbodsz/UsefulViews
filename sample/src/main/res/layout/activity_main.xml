@@ -23,7 +23,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.farbod.labelledspinner.sample.MainActivity">
+    tools:context="com.satsuware.usefulviews.sample.MainActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -41,7 +41,7 @@
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin" >
 
-        <com.farbod.labelledspinner.LabelledSpinner
+        <com.satsuware.usefulviews.LabelledSpinner
             android:id="@+id/spinner_planets"
             ls:labelText="@string/planets_prompt"
             android:layout_width="match_parent"

@@ -21,7 +21,7 @@ android {
     buildToolsVersion "23.0.2"
 
     defaultConfig {
-        applicationId "com.farbod.labelledspinner.sample"
+        applicationId "com.satsuware.usefulviews.sample"
         minSdkVersion 14
         targetSdkVersion 23
         versionCode 1
@@ -39,6 +39,6 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.2.1'
-    compile 'com.farbod.labelledspinner:labelledspinner:1.2.0'
-    //compile project(':labelledspinner')  // Used when testing latest features of library module
+    //compile 'com.satsuware.lib:usefulviews:2.0.0'
+    compile project(':library')  // Used when testing latest features of library module
 }

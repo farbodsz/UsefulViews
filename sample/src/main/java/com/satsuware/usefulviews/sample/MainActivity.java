@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.farbod.labelledspinner.sample;
+package com.satsuware.usefulviews.sample;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -23,7 +23,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Toast;
 
-import com.farbod.labelledspinner.LabelledSpinner;
+import com.satsuware.usefulviews.LabelledSpinner;
 
 public class MainActivity extends AppCompatActivity implements LabelledSpinner.OnItemChosenListener {
 
