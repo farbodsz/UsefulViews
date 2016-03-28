@@ -16,7 +16,7 @@
   -->
 
 <resources>
-    <!-- These are attributes for the LabelledSpinner component -->
+
     <declare-styleable name="LabelledSpinner" >
 
         <!-- The text that is displayed on the floating label -->
@@ -32,4 +32,14 @@
         <attr name="defaultErrorEnabled" format="boolean" />
 
     </declare-styleable>
+
+
+    <declare-styleable name="FlippableView" >
+
+        <!-- The views for the front and back of the FlippableView -->
+        <attr name="viewFront" format="reference" />
+        <attr name="viewBack" format="reference" />
+
+    </declare-styleable>
+
 </resources>
