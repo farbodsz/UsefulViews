@@ -1,7 +1,6 @@
 # UsefulViews
 
-[![Build Status](https://travis-ci.org/FarbodSalamat-Zadeh/LabelledSpinner.svg?branch=master)](https://travis-ci.org/FarbodSalamat-Zadeh/LabelledSpinner)
-
+[![Build Status](https://travis-ci.org/FarbodSalamat-Zadeh/UsefulViews.svg?branch=master)](https://travis-ci.org/FarbodSalamat-Zadeh/UsefulViews)
 Some useful widgets to use in Android development.
 
 This project initially started from `LabelledSpinner` (a Spinner component with a floating label for Android). For reference you can see [this question on Stack Overflow](http://stackoverflow.com/questions/31625620/floating-label-spinner), and [another similar question](http://stackoverflow.com/questions/31001991/how-to-customize-a-spinner-with-floating-text).
@@ -22,7 +21,7 @@ dependencies {
 
 ### LabelledSpinner
 
-Below is a basic example of how `LabelledSpinner` can be used. There is also a sample app [you can view on this repository](https://github.com/FarbodSalamat-Zadeh/LabelledSpinner/tree/master/sample), showcasing `LabelledSpinner`'s features in more detail.
+Below is a basic example of how `LabelledSpinner` can be used. There is also a sample app [you can view on this repository](https://github.com/FarbodSalamat-Zadeh/UsefulViews/tree/master/sample), showcasing `LabelledSpinner`'s features in more detail.
 
 XML layout file:
 ```xml
