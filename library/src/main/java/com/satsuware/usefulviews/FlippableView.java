@@ -188,6 +188,7 @@ public class FlippableView extends FrameLayout {
             views[i].setOnClickListener(onClickListener);
             mViewFlipper.addView(views[i]);
         }
+        mIsBackShowing = false;
 
         mViewFlipper.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
@@ -297,6 +298,15 @@ public class FlippableView extends FrameLayout {
         mFrontView = frontView;
         mBackView = backView;
         updateFrontAndBack();
+    }
+
+    /**
+     * Removes the front and back Views from the card/widget
+     *
+     * @see #setFrontAndBackViews(View, View)
+     */
+    public void removeFrontAndBack() {
+        mViewFlipper.removeAllViews();
     }
 }
 
