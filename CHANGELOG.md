@@ -3,6 +3,22 @@
 [![Releases](https://img.shields.io/badge/LabelledSpinner-releases-blue.svg)](https://github.com/FarbodSalamat-Zadeh/LabelledSpinner/releases)
 [![Tags](https://img.shields.io/badge/LabelledSpinner-tags-FF69B4.svg)](https://github.com/FarbodSalamat-Zadeh/LabelledSpinner/tags)
 
+## 2.1.3 - .4
+_28th Mar '16_
+- Fixes issue where `FlippableView` could not be flipped after being update
+
+## 2.1.2
+_28th Mar '16_
+- Adds option for `FlippableView` to remove both front and back Views
+
+## 2.1.1
+_28th Mar '16
+- Fixes issue with `FlippableView` not being available
+
+## 2.1
+_28th Mar '16_
+- Adds the `FlippableView` widget
+
 ## 2.0.1
 _27th Mar '16_
 - Fixes issue regarding Javadoc checks when uploading to Bintray

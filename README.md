@@ -13,7 +13,7 @@ To do so, add the following to your app module's `build.gradle` file:
 ```groovy
 dependencies {
     ...
-    compile 'com.satsuware.lib:usefulviews:2.0.1'
+    compile 'com.satsuware.lib:usefulviews:2.1.4'
 }
 ```
 
@@ -65,6 +65,10 @@ public void onNothingChosen(View labelledSpinner, AdapterView<?> adapterView) {
     // Do something here
 }
 ```
+
+## Documentation
+
+Javadocs are available, but documentation on a website will be added soon.
 
 ## Deprecation
 
