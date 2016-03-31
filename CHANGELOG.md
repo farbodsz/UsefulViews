@@ -3,6 +3,11 @@
 [![Releases](https://img.shields.io/badge/LabelledSpinner-releases-blue.svg)](https://github.com/FarbodSalamat-Zadeh/LabelledSpinner/releases)
 [![Tags](https://img.shields.io/badge/LabelledSpinner-tags-FF69B4.svg)](https://github.com/FarbodSalamat-Zadeh/LabelledSpinner/tags)
 
+## 2.2
+_31st Mar '16_
+- Update Gradle tools project dependency to 2.0.0-rc1
+- Fix typo in project `.gitignore` file
+
 ## 2.1.3 - .4
 _28th Mar '16_
 - Fixes issue where `FlippableView` could not be flipped after being update
