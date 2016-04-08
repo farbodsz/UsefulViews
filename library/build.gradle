@@ -24,8 +24,8 @@ android {
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 23
-        versionCode 220
-        versionName "2.2.0"
+        versionCode 230
+        versionName "2.3.0"
     }
     buildTypes {
         release {
@@ -38,8 +38,8 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.2.1'
-    compile 'com.android.support:support-annotations:23.2.1@jar'
+    compile 'com.android.support:appcompat-v7:23.3.0'
+    compile 'com.android.support:support-annotations:23.3.0@jar'
 }
 
 publish {
@@ -48,7 +48,7 @@ publish {
     userOrg = 'farbodsalamat-zadeh'
     groupId = 'com.satsuware.lib'
     artifactId = 'usefulviews'
-    publishVersion = "2.2.0"
+    publishVersion = "2.3.0"
     desc = 'A collection of useful widgets for Android.'
     website = 'https://github.com/FarbodSalamat-Zadeh/UsefulViews'
     issueTracker = "${website}/issues"
