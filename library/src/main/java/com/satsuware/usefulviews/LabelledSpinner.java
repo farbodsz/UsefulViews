@@ -52,7 +52,7 @@ import java.util.List;
  *
  * @attr ref R.styleable#LabelledSpinner_labelText
  * @attr ref R.styleable#LabelledSpinner_widgetColor
- * @attr ref R.styleable#LabelledSpinner_entries
+ * @attr ref R.styleable#LabelledSpinner_spinnerEntries
  * @attr ref R.styleable#LabelledSpinner_defaultErrorEnabled
  */
 public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemSelectedListener {
@@ -162,7 +162,7 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
 
         alignLabelWithSpinnerItem(4);
 
-        final CharSequence[] entries = a.getTextArray(R.styleable.LabelledSpinner_entries);
+        final CharSequence[] entries = a.getTextArray(R.styleable.LabelledSpinner_spinnerEntries);
         if (entries != null) {
             setItemsArray(entries);
         }
