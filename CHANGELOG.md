@@ -3,6 +3,10 @@
 [![Releases](https://img.shields.io/badge/LabelledSpinner-releases-blue.svg)](https://github.com/FarbodSalamat-Zadeh/LabelledSpinner/releases)
 [![Tags](https://img.shields.io/badge/LabelledSpinner-tags-FF69B4.svg)](https://github.com/FarbodSalamat-Zadeh/LabelledSpinner/tags)
 
+## 2.3.1
+_13th Apr '16_
+- Rename attribute `entries` of `LabelledSpinner` to resolve conflicts with other libraries
+
 ## 2.3
 _8th Apr '16_
 - Update Gradle tools project dependency to 2.0.0

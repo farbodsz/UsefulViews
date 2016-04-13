@@ -1,6 +1,7 @@
 # UsefulViews
 
 [![Build Status](https://travis-ci.org/FarbodSalamat-Zadeh/UsefulViews.svg?branch=master)](https://travis-ci.org/FarbodSalamat-Zadeh/UsefulViews)
+
 Some useful widgets to use in Android development.
 
 This project initially started from `LabelledSpinner` (a Spinner component with a floating label for Android). For reference you can see [this question on Stack Overflow](http://stackoverflow.com/questions/31625620/floating-label-spinner), and [another similar question](http://stackoverflow.com/questions/31001991/how-to-customize-a-spinner-with-floating-text).
@@ -13,7 +14,7 @@ To do so, add the following to your app module's `build.gradle` file:
 ```groovy
 dependencies {
     ...
-    compile 'com.satsuware.lib:usefulviews:2.3.0'
+    compile 'com.satsuware.lib:usefulviews:2.3.1'
 }
 ```
 
