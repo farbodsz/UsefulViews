@@ -326,7 +326,7 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
      * @see #setItemsArray(List)
      * @see #setItemsArray(List, int, int)
      *
-     * @attr ref R.styleable#LabelledSpinner_entries
+     * @attr ref R.styleable#LabelledSpinner_spinnerEntries
      */
     public void setItemsArray(@ArrayRes int arrayResId) {
         setItemsArray(arrayResId, android.R.layout.simple_spinner_item,
@@ -349,7 +349,7 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
      * @see #setItemsArray(List)
      * @see #setItemsArray(List, int, int)
      *
-     * @attr ref R.styleable#LabelledSpinner_entries
+     * @attr ref R.styleable#LabelledSpinner_spinnerEntries
      */
     public void setItemsArray(@ArrayRes int arrayResId, @LayoutRes int spinnerItemRes,
                               @LayoutRes int dropdownViewRes) {
@@ -372,7 +372,7 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
      * @see #setItemsArray(List)
      * @see #setItemsArray(List, int, int)
      *
-     * @attr ref R.styleable#LabelledSpinner_entries
+     * @attr ref R.styleable#LabelledSpinner_spinnerEntries
      */
     public void setItemsArray(CharSequence[] itemsArray) {
         setItemsArray(itemsArray, android.R.layout.simple_spinner_item,
@@ -394,7 +394,7 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
      * @see #setItemsArray(List)
      * @see #setItemsArray(List, int, int)
      *
-     * @attr ref R.styleable#LabelledSpinner_entries
+     * @attr ref R.styleable#LabelledSpinner_spinnerEntries
      */
     public void setItemsArray(CharSequence[] itemsArray, @LayoutRes int spinnerItemRes,
                               @LayoutRes int dropdownViewRes) {
@@ -417,7 +417,7 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
      * @see #setItemsArray(CharSequence[], int, int)
      * @see #setItemsArray(List, int, int)
      *
-     * @attr ref R.styleable#LabelledSpinner_entries
+     * @attr ref R.styleable#LabelledSpinner_spinnerEntries
      */
     public void setItemsArray(List<?> list) {
         setItemsArray(list, android.R.layout.simple_spinner_item,
@@ -439,7 +439,7 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
      * @see #setItemsArray(CharSequence[], int, int)
      * @see #setItemsArray(List)
      *
-     * @attr ref R.styleable#LabelledSpinner_entries
+     * @attr ref R.styleable#LabelledSpinner_spinnerEntries
      */
     public void setItemsArray(List<?> list, @LayoutRes int spinnerItemRes,
                               @LayoutRes int dropdownViewRes) {
