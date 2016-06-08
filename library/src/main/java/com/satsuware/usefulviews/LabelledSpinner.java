@@ -41,6 +41,7 @@ import java.util.List;
 /**
  * A Spinner widget with a 'floating label' above it.
  *
+ * <p>
  * This is actually a compound view consisting of a
  * {@link android.widget.Spinner}, a {@link android.widget.TextView}
  * (the floating label), and another {@link android.view.View} (a 1dp thin
@@ -49,6 +50,7 @@ import java.util.List;
  * and complying with the
  * <a href="www.google.com/design/spec/components/text-fields.html#text-fields-labels">
  * Material Design Guidelines for labels on text fields and spinners</a>.
+ * </p>
  *
  * @attr ref R.styleable#LabelledSpinner_labelText
  * @attr ref R.styleable#LabelledSpinner_widgetColor
@@ -576,7 +578,7 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
      * Adds a 4dp left margin to the label and divider line underneath so that
      * it aligns with the Spinner item text. By default, the additional 4dp
      * margin will not be added.
-     *
+     * <p>
      * Note: By default, however, a 4dp margin will be added so that the label
      * and divider align correctly with other UI components, such as the label
      * in a {@code android.support.design.widget.TextInputLayout}. This means
@@ -586,6 +588,7 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
      * Also note that if {@code indentLabel} is true, the label and divider
      * will not be aligned with other UI components as they would be 4dp
      * further right from them.
+     * </p>
      *
      * @param indentLabel Whether or not the label will be indented
      *

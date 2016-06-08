@@ -32,10 +32,12 @@ import android.widget.ViewFlipper;
 /**
  * A widget that can be 'flipped', like a card.
  *
+ * <p>
  * The Views to display on the front and back of the card are set
  * via the constructors, XML attribute, or methods. Then, at particular
  * times, such as when this widget is clicked, the widget will display
  * a flipping animation to turn to the other side of the card.
+ * </p>
  *
  * @attr ref R.styleable#FlippableView_viewFront
  * @attr ref R.styleable#FlippableView_viewBack
