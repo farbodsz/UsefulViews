@@ -18,7 +18,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    buildToolsVersion "23.0.3"
 
     defaultConfig {
         applicationId "com.satsuware.usefulviews.sample"
@@ -38,7 +38,7 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.3.0'
+    compile 'com.android.support:appcompat-v7:23.4.0'
     compile 'com.satsuware.lib:usefulviews:2.2.0'
     //compile project(':library')  // Used when testing latest features of library module
 }
