@@ -207,7 +207,7 @@ public class FlippableView extends FrameLayout {
      * Animates a 'flip' so that the widget displays the View on the
      * opposite side to what is currently being displayed.
      */
-    private void flip() {
+    public void flip() {
         if (mFrontView == null || mBackView == null) {
             throw new NullPointerException("You must specify a front and back view for the " +
                     "FlippableView, through either a constructor, XML attribute, or method");
