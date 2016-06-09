@@ -1,7 +1,7 @@
 # Changelog - UsefulViews
 
-[![Releases](https://img.shields.io/badge/LabelledSpinner-releases-blue.svg)](https://github.com/FarbodSalamat-Zadeh/LabelledSpinner/releases)
-[![Tags](https://img.shields.io/badge/LabelledSpinner-tags-FF69B4.svg)](https://github.com/FarbodSalamat-Zadeh/LabelledSpinner/tags)
+[![Releases](https://img.shields.io/badge/LabelledSpinner-releases-blue.svg)](https://github.com/FarbodSalamat-Zadeh/UsefulViews/releases)
+[![Tags](https://img.shields.io/badge/LabelledSpinner-tags-FF69B4.svg)](https://github.com/FarbodSalamat-Zadeh/UsefulViews/tags)
 
 ## 2.3.2
 _9th Jun '16_
