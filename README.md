@@ -14,7 +14,7 @@ To do so, add the following to your app module's `build.gradle` file:
 ```groovy
 dependencies {
     ...
-    compile 'com.satsuware.lib:usefulviews:2.3.1'
+    compile 'com.satsuware.lib:usefulviews:2.3.2'
 }
 ```
 
