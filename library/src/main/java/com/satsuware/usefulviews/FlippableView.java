@@ -204,10 +204,24 @@ public class FlippableView extends FrameLayout {
 
 
     /**
-     * Animates a 'flip' so that the widget displays the View on the
-     * opposite side to what is currently being displayed.
+     * Flips the widget so that it displays the View on the opposite
+     * side to what is currently being displayed.
+     * This happens without an animation.
+     *
+     * @see #flip(boolean)
      */
     public void flip() {
+        flip(false);
+    }
+
+
+    /**
+     * Animates a 'flip' so that the widget displays the View on the
+     * opposite side to what is currently being displayed.
+     *
+     * @see #flip()
+     */
+    public void flip(boolean animate) {
         if (mFrontView == null || mBackView == null) {
             throw new NullPointerException("You must specify a front and back view for the " +
                     "FlippableView, through either a constructor, XML attribute, or method");
@@ -217,15 +231,21 @@ public class FlippableView extends FrameLayout {
             if (mViewFlipper.getDisplayedChild() == 1) {
                 return;  // If there is a child (to the left), stop
             }
-            mViewFlipper.setInAnimation(mContext, R.anim.grow_from_middle);
-            mViewFlipper.setOutAnimation(mContext, R.anim.shrink_to_middle);
+
+            if (animate) {
+                mViewFlipper.setInAnimation(mContext, R.anim.grow_from_middle);
+                mViewFlipper.setOutAnimation(mContext, R.anim.shrink_to_middle);
+            }
             mViewFlipper.showPrevious();  // Display previous screen
         } else {
             if (mViewFlipper.getDisplayedChild() == 0) {
                 return;  // If there aren't any other children, stop
             }
-            mViewFlipper.setInAnimation(mContext, R.anim.grow_from_middle);
-            mViewFlipper.setOutAnimation(mContext, R.anim.shrink_to_middle);
+
+            if (animate) {
+                mViewFlipper.setInAnimation(mContext, R.anim.grow_from_middle);
+                mViewFlipper.setOutAnimation(mContext, R.anim.shrink_to_middle);
+            }
             mViewFlipper.showNext();  // Display next screen
         }
 
@@ -245,6 +265,13 @@ public class FlippableView extends FrameLayout {
      */
     public View getBackView() {
         return mBackView;
+    }
+
+    /**
+     * @return the ViewFlipper associated with this widget
+     */
+    public ViewFlipper getViewFlipper() {
+        return mViewFlipper;
     }
 
     /**
