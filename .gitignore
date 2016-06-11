@@ -1,6 +1,6 @@
 # Gradle files
 .gradle/
-build/
+build
 
 # Local configuration file (sdk path, etc)
 local.properties
@@ -8,3 +8,6 @@ local.properties
 # IntelliJ
 *.iml
 /.idea
+
+# File for remembering an upload command in terminal
+upload_command.txt
