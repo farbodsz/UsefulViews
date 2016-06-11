@@ -35,7 +35,7 @@ import android.widget.ViewFlipper;
  * <p>
  * The Views to display on the front and back of the card are set
  * via the constructors, XML attribute, or methods. Then, at particular
- * times, such as when this widget is clicked, the widget will display
+ * times, such as when this widget is clicked, the widget can display
  * a flipping animation to turn to the other side of the card.
  * </p>
  *
@@ -72,6 +72,11 @@ public class FlippableView extends FrameLayout {
      * being displayed
      */
     private boolean mIsBackShowing;
+
+    /**
+     * If there should be an animation when this view is 'flipped'
+     */
+    private boolean mAnimate = true;
 
 
     public FlippableView(Context context) {
@@ -205,19 +210,22 @@ public class FlippableView extends FrameLayout {
 
     /**
      * Flips the widget so that it displays the View on the opposite
-     * side to what is currently being displayed.
-     * This happens without an animation.
+     * side to what is currently being displayed. Whether or not it
+     * animates depends on the boolean {@link #mAnimate}.
      *
      * @see #flip(boolean)
      */
     public void flip() {
-        flip(false);
+        flip(mAnimate);
     }
 
 
     /**
-     * Animates a 'flip' so that the widget displays the View on the
-     * opposite side to what is currently being displayed.
+     * Flips the widget so that it displays the View on the opposite
+     * side to what is currently being displayed. Whether or not it
+     * animates depends on the parameter passed.
+     *
+     * @param animate Whether or not the flip should be animated
      *
      * @see #flip()
      */
@@ -336,6 +344,31 @@ public class FlippableView extends FrameLayout {
      */
     public void removeFrontAndBack() {
         mViewFlipper.removeAllViews();
+    }
+
+
+    /**
+     * @return whether or not this view will display animations
+     */
+    public boolean isAnimated() {
+        return mAnimate;
+    }
+
+    /**
+     * Sets the boolean determining whether or this view should
+     * animate when clicked
+     *
+     * @param animate Whether or not flipping this widget should
+     *                display an animation
+     *
+     * @see #isAnimated()
+     */
+    public void setAnimate(boolean animate) {
+        if (animate == mAnimate) {
+            return;
+        }
+        mAnimate = animate;
+        updateFrontAndBack();  // updating OnClickListeners
     }
 }
 
