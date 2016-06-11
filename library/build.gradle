@@ -24,8 +24,8 @@ android {
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 23
-        versionCode 233
-        versionName "2.3.3"
+        versionCode 235
+        versionName "2.3.5"
     }
     buildTypes {
         release {
@@ -48,7 +48,7 @@ publish {
     userOrg = 'farbodsalamat-zadeh'
     groupId = 'com.satsuware.lib'
     artifactId = 'usefulviews'
-    publishVersion = "2.3.3"
+    publishVersion = "2.3.5"
     desc = 'A collection of useful widgets for Android.'
     website = 'https://github.com/FarbodSalamat-Zadeh/UsefulViews'
     issueTracker = "${website}/issues"
