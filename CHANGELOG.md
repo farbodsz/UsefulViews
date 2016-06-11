@@ -3,6 +3,11 @@
 [![Releases](https://img.shields.io/badge/LabelledSpinner-releases-blue.svg)](https://github.com/FarbodSalamat-Zadeh/UsefulViews/releases)
 [![Tags](https://img.shields.io/badge/LabelledSpinner-tags-FF69B4.svg)](https://github.com/FarbodSalamat-Zadeh/UsefulViews/tags)
 
+## 2.3.3
+_11th Jun '16_
+- Add the option to animate `flip()`
+- Add `getViewFlipper()` which returns the `ViewFlipper` associated with the `FlippableView`
+
 ## 2.3.2
 _9th Jun '16_
 - Make `flip()` method of `FlippableView` public
