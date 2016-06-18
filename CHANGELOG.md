@@ -3,6 +3,15 @@
 [![Releases](https://img.shields.io/badge/LabelledSpinner-releases-blue.svg)](https://github.com/FarbodSalamat-Zadeh/UsefulViews/releases)
 [![Tags](https://img.shields.io/badge/LabelledSpinner-tags-FF69B4.svg)](https://github.com/FarbodSalamat-Zadeh/UsefulViews/tags)
 
+## 2.3.6
+_18th Jun '16_
+- Update Android Support library dependencies to 24.0.0
+- Update SDK versions (compileSdkVersion and targetSdkVersion) to 24 (including in `.travis.yml`)
+
+## 2.3.4 - .5
+_12th Jun '16_
+- Add `mAnimate` boolean field for `FlippableView` to decide whether to animate
+
 ## 2.3.3
 _11th Jun '16_
 - Add the option to animate `flip()`

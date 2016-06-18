@@ -14,7 +14,7 @@ To do so, add the following to your app module's `build.gradle` file:
 ```groovy
 dependencies {
     ...
-    compile 'com.satsuware.lib:usefulviews:2.3.3'
+    compile 'com.satsuware.lib:usefulviews:2.3.6'
 }
 ```
 
@@ -70,19 +70,6 @@ public void onNothingChosen(View labelledSpinner, AdapterView<?> adapterView) {
 ## Documentation
 
 Javadocs are available, but documentation on a website will be added soon.
-
-## Deprecation
-
-For those using the now outdated library dependency:
-
-```groovy
-dependencies {
-    ...
-    compile 'com.farbod.labelledspinner:labelledspinner:1.2.0'
-}
-```
-
-You can continue to use this, however it is recommended you update to the new one.
 
 ## Changelog
 
